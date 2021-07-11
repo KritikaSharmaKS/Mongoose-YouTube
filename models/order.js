@@ -1,4 +1,5 @@
-const mongoose = require('../util/database');
+const mongoose = require('mongoose');
+const connection  = require('../util/database');
 
 const order = new mongoose.Schema({
   total: {
@@ -7,6 +8,6 @@ const order = new mongoose.Schema({
   }
 });
 
-const Order = mongoose.model('Order', order);
+const Order = connection.model('Order', order);
 
 module.exports = Order;

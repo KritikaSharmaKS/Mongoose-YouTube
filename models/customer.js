@@ -1,4 +1,5 @@
-const mongoose = require('../util/database');
+const mongoose = require('mongoose');
+const connection  = require('../util/database');
 
 const customer = new mongoose.Schema({
   name: {
@@ -11,6 +12,6 @@ const customer = new mongoose.Schema({
   }
 });
 
-const Customer = mongoose.model('Customer', customer);
+const Customer = connection.model('Customer', customer);
 
 module.exports = Customer;

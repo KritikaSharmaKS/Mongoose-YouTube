@@ -1,7 +1,4 @@
 const mongoose = require('mongoose');
-mongoose.connect(
-  'mongodb://localhost/ks-store', 
-  {useNewUrlParser: true, useUnifiedTopology: true}
-);
+const connection = mongoose.createConnection('mongodb://localhost:27017/ks-store');
 
-module.exports = mongoose;
+module.exports = connection;
